@@ -1,7 +1,28 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.cysharp.unitask"
+      ]
+    },
+    {
+      "name": "npm",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "com.github.asus4"
+      ]
+    }
+  ],
   "dependencies": {
+    "com.atteneder.gltfast": "https://github.com/atteneder/glTFast.git",
+    "com.github.asus4.mediapipe": "2.10.0",
+    "com.github.asus4.tflite": "2.10.0",
+    "com.github.asus4.tflite.common": "2.10.0",
     "com.unity.collab-proxy": "2.0.3",
     "com.unity.feature.development": "1.0.1",
+    "com.unity.postprocessing": "3.2.2",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.4",
     "com.unity.ugui": "1.0.0",
