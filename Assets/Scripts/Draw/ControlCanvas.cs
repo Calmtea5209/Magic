@@ -38,6 +38,7 @@ public class ControlCanvas : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = false;
+        GameObject.FindWithTag("Hand").GetComponent<Camera>().enabled = false;
     }
 
     void Pause()
@@ -51,6 +52,7 @@ public class ControlCanvas : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = true;
+        //GameObject.FindWithTag("Hand").GetComponent<Camera>().enabled = true;
 
     }
 

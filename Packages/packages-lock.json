@@ -38,6 +38,12 @@
       },
       "url": "https://registry.npmjs.com"
     },
+    "com.github.homuler.mediapipe": {
+      "version": "file:com.github.homuler.mediapipe",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.burst": {
       "version": "1.8.4",
       "depth": 1,
