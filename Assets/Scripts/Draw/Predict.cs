@@ -36,7 +36,7 @@ public class Predict : MonoBehaviour
 
     private void Update()
     {
-        if (!LineGenerator.isDrawing && Input.GetKeyDown(KeyCode.V))
+        if (!LineGenerator.isDrawing && Input.GetKeyDown(KeyCode.V) && !ControlCanvas.SettingMenuStatus)
         {
             var inputTexture = new RenderTexture(_inputTexture2D.width, _inputTexture2D.height, 0);
             inputCamera.targetTexture = inputTexture;

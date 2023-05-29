@@ -9,7 +9,7 @@ public class LineGenerator : MonoBehaviour
     public GameObject linePrefab;
     public Camera customCamera; 
     public float lineDistance = 2f; 
-    public static int choose = 1;
+    public static int choose = 0;
     public GameObject HandTracking;
     public static Line activeLine;
     public static bool isDrawing = false;
@@ -18,7 +18,7 @@ public class LineGenerator : MonoBehaviour
 
     void Update()
     {
-        if (!isDrawing && Input.GetKeyDown(KeyCode.V))
+        if (!isDrawing && Input.GetKeyDown(KeyCode.V) && !ControlCanvas.SettingMenuStatus)
         {
             start = true;
             stop = false;

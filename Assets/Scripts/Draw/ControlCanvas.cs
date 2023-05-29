@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class ControlCanvas : MonoBehaviour
 {
-    public bool GameIsPaused = false;
+
+    public static bool GameIsPaused = false;
+    public static bool SettingMenuStatus = false;
+
     public GameObject pauseMenuUI;
+    public SettingMenu settingMenu;
 
     void Start()
     {
@@ -14,44 +18,85 @@ public class ControlCanvas : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V) && !SettingMenuStatus)
         {
             if (GameIsPaused)
             {
                 Resume();
+                pauseMenuUI.SetActive(false);
+                GameIsPaused = false;
+                GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = false;
+                GameObject.FindWithTag("Hand").GetComponent<Camera>().enabled = false;
             }
             else
             {
                 Pause();
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                pauseMenuUI.SetActive(true);
+                GameIsPaused = true;
+                GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = true;
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.Tab) && !GameIsPaused)
+        {
+            if(SettingMenuStatus)
+            {
+                Resume();
+                settingMenu.CloseSettingMenu();
+                SettingMenuStatus = false;
+            }
+            else
+            {
+                Pause();
+                settingMenu.OpenSettingMenu();
+                SettingMenuStatus = true;
             }
         }
     }
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
-        GameIsPaused = false;
+        /*if(GameIsPaused && !SettingMenuStatus)
+        {
+            pauseMenuUI.SetActive(false);
+            GameIsPaused = false;
+            GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = false;
+            GameObject.FindWithTag("Hand").GetComponent<Camera>().enabled = false;
+        }
+        else if(SettingMenuStatus)
+        {
+            settingMenu.CloseSettingMenu();
+            SettingMenuStatus = false;
+        }*/
         GameObject.Find("Player").GetComponent<Shooter>().enabled = true;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.Find("PlayerCamara").GetComponent<PlayerCamara>().enabled = true;
         GameObject.Find("wand").GetComponent<WeaponSway>().enabled = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = false;
-        GameObject.FindWithTag("Hand").GetComponent<Camera>().enabled = false;
     }
 
-    void Pause()
+    public void Pause()
     {
-        pauseMenuUI.SetActive(true);
-        GameIsPaused = true;
+        /*if(!GameIsPaused && !SettingMenuStatus)
+        {
+            pauseMenuUI.SetActive(true);
+            GameIsPaused = true;
+            GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = true;
+        }
+        else if(!SettingMenuStatus)
+        {
+            settingMenu.OpenSettingMenu();
+            SettingMenuStatus = true;
+        }*/
+
         GameObject.Find("Player").GetComponent<Shooter>().enabled = false;
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
         GameObject.Find("PlayerCamara").GetComponent<PlayerCamara>().enabled = false;
         GameObject.Find("wand").GetComponent<WeaponSway>().enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        GameObject.FindWithTag("Draw").GetComponent<Camera>().enabled = true;
         //GameObject.FindWithTag("Hand").GetComponent<Camera>().enabled = true;
 
     }
