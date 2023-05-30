@@ -12,6 +12,7 @@ public class SettingMenu : MonoBehaviour
     public Toggle DrawMouseToggle;
     public Toggle DrawHandToggle;
     public ControlCanvas controlCanvas;
+    public GameObject ControlImage;
     void Start()
     {
         DrawMouseToggle.isOn = LineGenerator.choose == 0;
@@ -99,6 +100,10 @@ public class SettingMenu : MonoBehaviour
             LineGenerator.choose = 1;
         }
         Debug.Log("Choose"+LineGenerator.choose);
+    }
+    public void OnShowControlButtonClicked(bool show)
+    {
+        ControlImage.SetActive(show);
     }
 
 }
