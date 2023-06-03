@@ -39,8 +39,8 @@ public class TutorialClear : MonoBehaviour
     
     void Update()
     {
-        float x = pm.PlayerPosision.x;
-        float z = pm.PlayerPosision.z;
+        float x = PlayerMovemen.PlayerPosision.x;
+        float z = PlayerMovemen.PlayerPosision.z;
 
         // Room[1] lock
         if (!isClear[1] && !isLocked[1] && z > 20f)

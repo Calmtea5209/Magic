@@ -28,7 +28,7 @@ public class Healing : MonoBehaviour
 
     void Update()
     {
-        if (isOnAlter(pm.PlayerPosision))
+        if (isOnAlter(PlayerMovemen.PlayerPosision))
         {
             Debug.Log("healing");
 

@@ -2,47 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovemen : MonoBehaviour
 {
-    Rigidbody rb;
-
-    float horizontalInput;
-    float verticalInput;
-
-    bool isGrounded;
-    public float GroundDrag;
-    public LayerMask groundMask;
-
-    public float speed;
-    public float jumpSpeed;
-
-    // Start is called before the first frame update
+    public static Vector3 PlayerPosision;
+    public CharacterController controller;
+    public float baseSpeed = 12f;
+    public float gravity = -9.81f;
+    public float jumpHeight = 3f;
+    public float sprintSpeed = 5f;
+    
+    float speedBoost = 1f;
+    Vector3 velocity;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if (controller.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
 
-        isGrounded = Physics.Raycast(transform.position,Vector3.down,1.2f,groundMask);
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        if(isGrounded)
-            rb.drag = GroundDrag;
+        if (Input.GetButton("Fire3"))
+            speedBoost = sprintSpeed;
         else
-            rb.drag = 0;
+            speedBoost = 1f;
 
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            rb.AddForce(transform.up * jumpSpeed,ForceMode.Impulse);
-    }
 
-    private void FixedUpdate() 
-    {
-        Vector3 direction = transform.right * horizontalInput + transform.forward*verticalInput;
-        if(isGrounded)
-            rb.AddForce(direction.normalized * speed);
+        if (Input.GetButton("Jump")  && controller.isGrounded )
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * (baseSpeed + speedBoost) * Time.deltaTime);
+
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
+
+        PlayerPosision = controller.transform.position;
+
+        //Debug.Log(PlayerPosision);
     }
 }

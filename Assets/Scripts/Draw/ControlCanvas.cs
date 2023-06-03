@@ -45,12 +45,14 @@ public class ControlCanvas : MonoBehaviour
                 Resume();
                 settingMenu.CloseSettingMenu();
                 SettingMenuStatus = false;
+                Debug.Log("F");
             }
             else
             {
                 Pause();
                 settingMenu.OpenSettingMenu();
                 SettingMenuStatus = true;
+                Debug.Log("T");
             }
         }
     }
@@ -70,8 +72,8 @@ public class ControlCanvas : MonoBehaviour
             SettingMenuStatus = false;
         }*/
         GameObject.Find("Player").GetComponent<Shooter>().enabled = true;
-        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
-        GameObject.Find("PlayerCamara").GetComponent<PlayerCamara>().enabled = true;
+        GameObject.Find("Player").GetComponent<PlayerMovemen>().enabled = true;
+        GameObject.Find("PlayerCamara").GetComponent<MouseCamLook>().enabled = true;
         GameObject.Find("wand").GetComponent<WeaponSway>().enabled = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -92,8 +94,8 @@ public class ControlCanvas : MonoBehaviour
         }*/
 
         GameObject.Find("Player").GetComponent<Shooter>().enabled = false;
-        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
-        GameObject.Find("PlayerCamara").GetComponent<PlayerCamara>().enabled = false;
+        GameObject.Find("Player").GetComponent<PlayerMovemen>().enabled = false;
+        GameObject.Find("PlayerCamara").GetComponent<MouseCamLook>().enabled = false;
         GameObject.Find("wand").GetComponent<WeaponSway>().enabled = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
