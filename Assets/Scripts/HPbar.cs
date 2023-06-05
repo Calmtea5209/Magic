@@ -14,6 +14,7 @@ public class HPbar : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
         hpBar.fillAmount = hp / MAX_HP;

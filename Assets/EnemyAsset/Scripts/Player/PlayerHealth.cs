@@ -7,12 +7,12 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public HealthBar healthBar;
+    //public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -27,12 +27,13 @@ public class PlayerHealth : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        HPbar.hp -= damage;
+        //healthBar.SetHealth(currentHealth);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "EnemyAttackProjectile")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "EnemyAttackProjectile")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             TakeDamage(20);
         }

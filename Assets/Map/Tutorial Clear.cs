@@ -18,7 +18,7 @@ public class TutorialClear : MonoBehaviour
     }
 
     void Door(string door, float angle, bool open)
-    {
+    {    
         if (open)
         {
             GameObject.Find(door + "L").transform.rotation = Quaternion.Euler(0f, angle + Random.Range(-75f, -50f), 0f);

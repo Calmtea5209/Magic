@@ -7,6 +7,14 @@ TagManager:
   - Bullet
   - Draw
   - Hand
+  - EnemyAttackMelee
+  - PlayerAttackDark
+  - EnemyAttackProjectile
+  - PlayerAttackDirt
+  - PlayerAttackLight
+  - PlayerAttackWater
+  - PlayerAttackFlora
+  - PlayerAttackFire
   layers:
   - Default
   - TransparentFX
