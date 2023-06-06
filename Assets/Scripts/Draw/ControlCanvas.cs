@@ -72,7 +72,7 @@ public class ControlCanvas : MonoBehaviour
             SettingMenuStatus = false;
         }*/
         GameObject.Find("Player").GetComponent<Shooter>().enabled = true;
-        GameObject.Find("Player").GetComponent<PlayerMovemen>().enabled = true;
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.Find("PlayerCamara").GetComponent<MouseCamLook>().enabled = true;
         GameObject.Find("wand").GetComponent<WeaponSway>().enabled = true;
         Cursor.visible = false;
@@ -94,7 +94,7 @@ public class ControlCanvas : MonoBehaviour
         }*/
 
         GameObject.Find("Player").GetComponent<Shooter>().enabled = false;
-        GameObject.Find("Player").GetComponent<PlayerMovemen>().enabled = false;
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
         GameObject.Find("PlayerCamara").GetComponent<MouseCamLook>().enabled = false;
         GameObject.Find("wand").GetComponent<WeaponSway>().enabled = false;
         Cursor.visible = true;
