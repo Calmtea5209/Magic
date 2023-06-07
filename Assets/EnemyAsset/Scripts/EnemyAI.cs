@@ -20,8 +20,7 @@ public class EnemyAI : MonoBehaviour
     {
         
         enemy.SetDestination(Player.position);
-      
-        //gameObject.transform.LookAt(Player.position);
+        gameObject.transform.LookAt(Player.position - new Vector3(0, 1f, 0));
         
 
     }

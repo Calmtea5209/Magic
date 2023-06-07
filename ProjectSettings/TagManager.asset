@@ -15,6 +15,7 @@ TagManager:
   - PlayerAttackWater
   - PlayerAttackFlora
   - PlayerAttackFire
+  - EnemyDestination
   layers:
   - Default
   - TransparentFX
