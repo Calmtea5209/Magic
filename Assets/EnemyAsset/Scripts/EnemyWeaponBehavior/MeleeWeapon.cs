@@ -18,12 +18,12 @@ public class MeleeWeapon: MonoBehaviour
     void Update()
     {
         timer += timer + Time.deltaTime;
-        Instantiate(specialEffect, transform.position, transform.rotation);
+        
 
         if (timer >= Destory_time )
         {
+            Instantiate(specialEffect, transform.position, transform.rotation);
             Destroy(gameObject);
-     
         }
     }
 }

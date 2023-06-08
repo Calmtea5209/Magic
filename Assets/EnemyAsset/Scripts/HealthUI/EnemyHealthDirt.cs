@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthDirt : MonoBehaviour
 {
+    public GameObject DeadSmoke;
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -21,6 +22,7 @@ public class EnemyHealthDirt : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            Instantiate(DeadSmoke, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
