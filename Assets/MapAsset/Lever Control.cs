@@ -9,7 +9,7 @@ public class LeverControl : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (!pulled[number] && Vector3.Distance(gameObject.transform.position, pm.PlayerPosision) <= 3)
+        if (!pulled[number] && Vector3.Distance(gameObject.transform.position, PlayerMovement.PlayerPosision) <= 3)
             gameObject.GetComponent<Outline>().enabled = true;
     }
 
@@ -20,7 +20,7 @@ public class LeverControl : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (number == 3 && !pulled[3] && Vector3.Distance(gameObject.transform.position, pm.PlayerPosision) <= 3)
+        if (number == 3 && !pulled[3] && Vector3.Distance(gameObject.transform.position, PlayerMovement.PlayerPosision) <= 3)
         {
             if (pulled[0] && pulled[1] && pulled[2])
             {
@@ -29,7 +29,7 @@ public class LeverControl : MonoBehaviour
             }
         }
 
-        else if (!pulled[number] && Vector3.Distance(gameObject.transform.position, pm.PlayerPosision) <= 3)
+        else if (!pulled[number] && Vector3.Distance(gameObject.transform.position, PlayerMovement.PlayerPosision) <= 3)
         {
             gameObject.GetComponent<Animation>().Play();
             pulled[number] = true;

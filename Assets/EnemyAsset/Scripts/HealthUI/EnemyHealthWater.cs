@@ -31,34 +31,34 @@ public class EnemyHealthWater : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "PlayerAttackDark")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "PlayerAttackDark")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             TakeDamage(20);
         }
 
-        if (other.gameObject.tag == "PlayerAttackWater")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "PlayerAttackWater")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             TakeDamage(10);
         }
 
-        if (other.gameObject.tag == "PlayerAttackLight")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "PlayerAttackLight")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             TakeDamage(20);
         }
 
-        if (other.gameObject.tag == "PlayerAttackFlora")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "PlayerAttackFlora")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             TakeDamage(30);
         }
 
-        if (other.gameObject.tag == "PlayerAttackFire")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "PlayerAttackFire")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             TakeDamage(2);
         }
 
-        if (other.gameObject.tag == "PlayerAttackDirt")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "PlayerAttackDirt")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             TakeDamage(30);
         }

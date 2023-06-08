@@ -52,6 +52,7 @@ public class MainMapClear : MonoBehaviour
     void Update()
     {
         float x = PlayerMovement.PlayerPosision.x;
+        float y = PlayerMovement.PlayerPosision.y;
         float z = PlayerMovement.PlayerPosision.z;
 
         // Level[1] lock
@@ -126,7 +127,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[4] lock
-        if (PrevIsClear(4) && !isClear_m[4] && !isLocked_m[4] && z < 36f)
+        if (PrevIsClear(4) && !isClear_m[4] && !isLocked_m[4] && z < 36f && y > 6f)
         {
             Door("4in", 0, 0f, false);
             isLocked_m[4] = true;
@@ -150,7 +151,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[5] lock
-        if (PrevIsClear(5) && !isClear_m[5] && !isLocked_m[5] && x > -18 && z > 8f)
+        if (PrevIsClear(5) && !isClear_m[5] && !isLocked_m[5] && y < -2f && z > 8f && z < 12f)
         {
             Door("5in", 1, 180f, false);
             isLocked_m[5] = true;
@@ -173,7 +174,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[6] lock
-        if (PrevIsClear(6) && !isClear_m[6] && !isLocked_m[6] && x > 13)
+        if (PrevIsClear(6) && !isClear_m[6] && !isLocked_m[6] && x > 13f && y < -2f)
         {
             Door("6in", 1, 90f, false);
             isLocked_m[6] = true;
@@ -197,7 +198,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[7] lock
-        if (PrevIsClear(7) && !isClear_m[7] && !isLocked_m[7] && z > 24)
+        if (PrevIsClear(7) && !isClear_m[7] && !isLocked_m[7] && z > 24f && y < -2f)
         {
             Door("7in", 0, 0f, false);
             isLocked_m[7] = true;
