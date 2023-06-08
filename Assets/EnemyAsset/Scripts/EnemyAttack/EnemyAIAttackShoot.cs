@@ -10,7 +10,7 @@ public class EnemyAIAttackShoot: MonoBehaviour
     public float AttackRange = 10;
     public GameObject Projectile;
     private float attack_Timer = 0;
-    private float attack_Rate = 1;
+    public float attack_Rate = 1;
     // Start is called before the first frame update
     void Start()
     {

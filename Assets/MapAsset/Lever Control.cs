@@ -5,17 +5,20 @@ using UnityEngine;
 public class LeverControl : MonoBehaviour
 {
     static public bool[] pulled = new bool[4];
+    static public bool mouseOnLever = false;
     public int number = 0;
 
     void OnMouseEnter()
     {
         if (!pulled[number] && Vector3.Distance(gameObject.transform.position, PlayerMovement.PlayerPosision) <= 3)
             gameObject.GetComponent<Outline>().enabled = true;
+        mouseOnLever = true;
     }
 
     void OnMouseExit()
     {
         gameObject.GetComponent<Outline>().enabled = false;
+        mouseOnLever = false;
     }
 
     void OnMouseDown()

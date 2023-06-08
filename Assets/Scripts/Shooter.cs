@@ -27,7 +27,7 @@ public class Shooter : MonoBehaviour
             currentProjectile = projectiles[Predict.result];
         }
         audioSource = GetComponent<AudioSource>();
-        if(Input.GetButton("Fire1") && Time.time >=timetoFire)
+        if(Input.GetButton("Fire1") && Time.time >=timetoFire && !LeverControl.mouseOnLever)
         {
             if(consumeMP <= MPbar.currentMP)
             {
