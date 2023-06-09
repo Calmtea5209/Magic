@@ -1413,7 +1413,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1448,8 +1448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  AttackRange: 1.8
-  Melee: {fileID: 8698523133474550018, guid: 4c147df17eedaa249b6ba3782e8c52bd, type: 3}
+  Melee: {fileID: 8698523133474550018, guid: 8ef5967dbb272fe4a9d4b49db21e0ed6, type: 3}
 --- !u!114 &6292825270540539928
 MonoBehaviour:
   m_ObjectHideFlags: 0

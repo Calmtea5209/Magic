@@ -7,7 +7,7 @@ public class DarkSkeleton : MonoBehaviour
     Animator animator;
 
     public Transform Player;
-    private float range = 1.8f;
+    private float range = 2.3f;
     private float play_Rate = 2f;
     private float timer = 0;
 

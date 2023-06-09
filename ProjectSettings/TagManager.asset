@@ -16,6 +16,13 @@ TagManager:
   - PlayerAttackFlora
   - PlayerAttackFire
   - EnemyDestination
+  - BossCrystal
+  - EnemyAttackDark
+  - EnemyAttackLight
+  - EnemyAttackWater
+  - EnemyAttackFire
+  - EnemyAttackDirt
+  - EnemyAttackFlora
   layers:
   - Default
   - TransparentFX

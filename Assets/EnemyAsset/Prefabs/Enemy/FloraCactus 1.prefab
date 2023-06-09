@@ -130,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 790783646845696996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -78.19867, y: 1.03, z: 7.6929855}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4976130299381826283}
@@ -254,7 +254,8 @@ MonoBehaviour:
   enemy: {fileID: 272716621710632126}
   Player: {fileID: 0}
   AttackRange: 10
-  Projectile: {fileID: 1082639521635503000, guid: cc0568b57a4a2f74bb173380a9ab327f, type: 3}
+  Projectile: {fileID: 1082639521635503000, guid: f3ec0678651d3ba469d56bc34c302833, type: 3}
+  attack_Rate: 1
 --- !u!114 &272716621710632097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +284,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 4946552516963742394}
   - component: {fileID: 1422119928338868330}
   m_Layer: 0
-  m_Name: EnemyProjectile
-  m_TagString: EnemyAttackProjectile
+  m_Name: EnemyProjectileFire
+  m_TagString: EnemyAttackFire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c8319643a6248748ace6f9d8f14ff9d, type: 2}
+  - {fileID: 2100000, guid: c40af36e0f19c4f43998b9505eedfb11, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,7 +206,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

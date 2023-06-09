@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAIAttackMelee : MonoBehaviour
 {
     public Transform Player;
-    public float AttackRange = 1.8f;
+    private float AttackRange = 2.3f;
     public GameObject Melee;
     private float attack_Timer = 0;
     private float attack_Rate = 2;

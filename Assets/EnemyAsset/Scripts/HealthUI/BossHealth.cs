@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
+    public GameObject BossDeath;
     public int maxHealth = 1000;
     public int currentHealth;
     private bool thereAreCrystals = false;
@@ -32,6 +33,7 @@ public class BossHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Instantiate(BossDeath , transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

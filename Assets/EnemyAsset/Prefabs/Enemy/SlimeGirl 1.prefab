@@ -2087,7 +2087,7 @@ Transform:
   m_GameObject: {fileID: 2527796588220438361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -57.088936, y: 0.5, z: -2.0689468}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2527796588220598981}
@@ -2193,7 +2193,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2227,8 +2227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  AttackRange: 1.8
-  Melee: {fileID: 8698523133474550018, guid: 4c147df17eedaa249b6ba3782e8c52bd, type: 3}
+  Melee: {fileID: 8698523133474550018, guid: 7a954fca68cc1d94b84a75c52e1f4de9, type: 3}
 --- !u!114 &2527796588637305207
 MonoBehaviour:
   m_ObjectHideFlags: 0

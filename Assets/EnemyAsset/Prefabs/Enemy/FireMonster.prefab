@@ -1026,7 +1026,8 @@ MonoBehaviour:
   enemy: {fileID: 7537298191830315562}
   Player: {fileID: 0}
   AttackRange: 10
-  Projectile: {fileID: 1082639521635503000, guid: cc0568b57a4a2f74bb173380a9ab327f, type: 3}
+  Projectile: {fileID: 1082639521635503000, guid: 4555bf09445538f4c9081ed9b05e4b1c, type: 3}
+  attack_Rate: 1
 --- !u!114 &7537298191830315559
 MonoBehaviour:
   m_ObjectHideFlags: 0

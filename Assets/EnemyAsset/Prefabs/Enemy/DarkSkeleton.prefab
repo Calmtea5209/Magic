@@ -513,8 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  AttackRange: 1.8
-  Melee: {fileID: 8698523133474550018, guid: 4c147df17eedaa249b6ba3782e8c52bd, type: 3}
+  Melee: {fileID: 8698523133474550018, guid: 3d17356954c1d7145aa7313a355d8e68, type: 3}
 --- !u!114 &143921420873426987
 MonoBehaviour:
   m_ObjectHideFlags: 0
