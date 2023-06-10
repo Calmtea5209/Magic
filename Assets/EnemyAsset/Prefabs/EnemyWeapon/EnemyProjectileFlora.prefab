@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1422119928338868330}
   m_Layer: 0
   m_Name: EnemyProjectileFlora
-  m_TagString: PlayerAttackFlora
+  m_TagString: EnemyAttackFlora
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

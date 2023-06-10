@@ -23,6 +23,12 @@ TagManager:
   - EnemyAttackFire
   - EnemyAttackDirt
   - EnemyAttackFlora
+  - PlayerDefenceDark
+  - PlayerDefenceLight
+  - PlayerDefenceWater
+  - PlayerDefenceFire
+  - PlayerDefenceDirt
+  - PlayerDefenceFlora
   layers:
   - Default
   - TransparentFX
