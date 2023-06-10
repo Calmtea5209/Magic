@@ -13,6 +13,7 @@ public class SettingMenu : MonoBehaviour
     public Toggle DrawHandToggle;
     public ControlCanvas controlCanvas;
     public GameObject ControlImage;
+    public GameObject MagicImage;
     void Start()
     {
         DrawMouseToggle.isOn = LineGenerator.choose == 0;
@@ -104,6 +105,11 @@ public class SettingMenu : MonoBehaviour
     public void OnShowControlButtonClicked(bool show)
     {
         ControlImage.SetActive(show);
+    }
+
+    public void OnShowMagicButtonClicked(bool show)
+    {
+        MagicImage.SetActive(show);
     }
 
 }

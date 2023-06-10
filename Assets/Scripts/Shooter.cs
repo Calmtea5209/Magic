@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Shooter : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Shooter : MonoBehaviour
     public GameObject[] projectiles;
     public GameObject currentProjectile;
     public Transform firePoint;
-    public AudioSource audioSource;
+    public Sound[] sounds;
     public MPbar mpBar;
     public float projectileSpeed = 30;
     public float fireRate = 4;
@@ -17,16 +18,28 @@ public class Shooter : MonoBehaviour
     public float consumeMP = 4;
     private float timetoFire;
     private Vector3 destination;
+    private int id = 0;
 
+
+    void Start() {
+        foreach(Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            
+        }    
+    }
 
 
     void Update()
     {
         if(Predict.result < projectiles.GetLength(0))
         {
-            currentProjectile = projectiles[Predict.result];
+            id = Predict.result;
+            currentProjectile = projectiles[id];
         }
-        audioSource = GetComponent<AudioSource>();
         if(Input.GetButton("Fire1") && Time.time >=timetoFire && !LeverControl.mouseOnLever)
         {
             if(consumeMP <= MPbar.currentMP)
@@ -41,7 +54,6 @@ public class Shooter : MonoBehaviour
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        audioSource.Play();
 
         if(Physics.Raycast(ray, out hit))
         {
@@ -51,14 +63,23 @@ public class Shooter : MonoBehaviour
         {
             destination = ray.GetPoint(1000);
         }
-        InstantiateProjectile(firePoint);
+        InstantiateProjectile(firePoint); 
+        playSoundEffect(id);
     }
 
     void InstantiateProjectile(Transform firePoint)
     {
         var projectileObj = Instantiate(currentProjectile,firePoint.position, Quaternion.identity) as GameObject;
         projectileObj.GetComponent<Rigidbody>().velocity = (destination - firePoint.position).normalized * projectileSpeed;
-        iTween.PunchPosition(projectileObj, new Vector3(Random.Range(arcRange, arcRange), Random.Range(arcRange, arcRange), 0), Random.Range(0.2f, 0.5f));
+        iTween.PunchPosition(projectileObj, new Vector3(UnityEngine.Random.Range(arcRange, arcRange), UnityEngine.Random.Range(arcRange, arcRange), 0), UnityEngine.Random.Range(0.2f, 0.5f));
         Destroy(projectileObj,6);
+    }
+
+    void playSoundEffect(int id) 
+    {
+        Sound soundObj = Array.Find(sounds, sound => sound.id == id);       
+
+        soundObj.source.Play();                                                    
+
     }
 }
