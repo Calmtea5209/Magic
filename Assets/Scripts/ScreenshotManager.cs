@@ -15,12 +15,10 @@ public class ScreenshotManager : MonoBehaviour
             string filename = filenamePrefix + "_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
             string filePath = Application.dataPath + savePath + filename;
 
-            // 创建一个临时的 RenderTexture 来存储目标相机的图像
             RenderTexture renderTexture = new RenderTexture(Screen.width, Screen.height, 24);
             targetCamera.targetTexture = renderTexture;
             targetCamera.Render();
 
-            // 保存 RenderTexture 的图像到文件
             RenderTexture.active = renderTexture;
             Texture2D screenshotTexture = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
             screenshotTexture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
@@ -28,7 +26,7 @@ public class ScreenshotManager : MonoBehaviour
             byte[] screenshotBytes = screenshotTexture.EncodeToPNG();
             File.WriteAllBytes(filePath, screenshotBytes);
 
-            // 清理资源
+
             Destroy(screenshotTexture);
             RenderTexture.active = null;
             targetCamera.targetTexture = null;
