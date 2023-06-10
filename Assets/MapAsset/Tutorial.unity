@@ -24277,6 +24277,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5675712537768515036, guid: 8cda7687928e5174ea2627e48a3c6d69, type: 3}
   m_PrefabInstance: {fileID: 929213378}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &932798085 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3296751564969279357, guid: 61282b307fa79094c9802bd538f1248a, type: 3}
+  m_PrefabInstance: {fileID: 4392900492290738436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &936768775
 GameObject:
   m_ObjectHideFlags: 0
@@ -56409,6 +56414,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 1042
       objectReference: {fileID: 0}
+    - target: {fileID: 4654181449903492736, guid: 61282b307fa79094c9802bd538f1248a, type: 3}
+      propertyPath: targetCamera
+      value: 
+      objectReference: {fileID: 932798085}
     - target: {fileID: 5021828997328957150, guid: 61282b307fa79094c9802bd538f1248a, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -56519,7 +56528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5711172535969071456, guid: 61282b307fa79094c9802bd538f1248a, type: 3}
       propertyPath: sounds.Array.data[0].volume
-      value: 1
+      value: 0.801
       objectReference: {fileID: 0}
     - target: {fileID: 5711172535969071456, guid: 61282b307fa79094c9802bd538f1248a, type: 3}
       propertyPath: sounds.Array.data[1].volume
