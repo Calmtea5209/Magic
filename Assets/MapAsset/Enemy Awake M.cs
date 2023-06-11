@@ -39,5 +39,11 @@ public class EnemyAwake_M : MonoBehaviour
             MainMapClear.isClear_m[level] = true;
             Debug.Log("level [" + level + "] is clear.");
         }
+
+        if (!MainMapClear.isClear_m[8] && MainMapClear.isLocked_m[8] && !GameObject.Find("Boss"))
+        {
+            MainMapClear.isClear_m[8] = true;
+        }
+
     }
 }
