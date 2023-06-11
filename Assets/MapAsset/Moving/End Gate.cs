@@ -18,7 +18,7 @@ public class EndGate : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (LeverControl.pulled[3] == true && transform.position.y < -0.9 && timer >= 0.01 && !MainMapClear.isLocked_m[8])
+        if (LeverControl.pulled[3] == true && transform.position.y < -0.9 && timer >= 0.01)
         {
             transform.Translate(0, 0.04f, 0);
             timer = 0f;
@@ -27,6 +27,7 @@ public class EndGate : MonoBehaviour
         if (MainMapClear.isLocked_m[8])
         {
             transform.Translate(0, -4f, 0);
+            LeverControl.pulled[3] = false;
         }
     }
 }

@@ -11,7 +11,7 @@ public class BossSpitFire : MonoBehaviour
     public GameObject Projectile;
     public GameObject BigFireBall;
     private float attack_Timer = 0;
-    private float attack_Rate = 1;
+    private float attack_Rate = 4;
     private float bigFireBallTimer = 0;
     private float bigFireBallRate = 30;
     // Start is called before the first frame update

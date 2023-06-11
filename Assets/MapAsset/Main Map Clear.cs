@@ -174,7 +174,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[8] lock
-        if (PrevIsClear(8) && !isClear_m[8] && !isLocked_m[8] && x < -30f && y < -2f && z > 52f)
+        if (PrevIsClear(8) && !isClear_m[8] && !isLocked_m[8] && x < -32f && y < -2f && z > 54f)
         {
             isLocked_m[8] = true;
             Debug.Log("Level [8] is loked");
