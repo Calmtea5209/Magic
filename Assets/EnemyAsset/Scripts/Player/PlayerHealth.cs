@@ -34,6 +34,10 @@ public class PlayerHealth : MonoBehaviour
         //healthBar.SetHealth(currentHealth);
         damage -= GameObject.Find("ControlDefence").GetComponent<PlayerDefence>().DecreaseDamage(attribute);
         HPbar.hp -= damage;
+        if(HPbar.hp < 0)
+        {
+            HPbar.hp = 0;
+        }
     }
 
     void OnTriggerEnter(Collider other)

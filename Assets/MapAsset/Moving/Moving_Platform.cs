@@ -10,22 +10,30 @@ public class Moving : MonoBehaviour
         
     }
 
+    float timer = 0f;
     bool isHidden = false;
-    public float move = 0.005f;
-    public float inEdge = 36f;
-    public float outEdge = 33f;
+    public float rate;
+    public float inEdge;
+    public float outEdge;
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         if (transform.position.z >= outEdge)
             isHidden = true;
         if (transform.position.z <= inEdge)
             isHidden = false;
 
-        if (!isHidden)
-            transform.Translate(0, 0, move);
-        else
-            transform.Translate(0, 0, -move);
+        if (timer >= (11-rate) * 0.001)
+        {
+            if (!isHidden)
+                transform.Translate(0, 0, 0.02f);
+            else
+                transform.Translate(0, 0, -0.02f);
+
+            timer = 0f;
+        }
     }
 }
