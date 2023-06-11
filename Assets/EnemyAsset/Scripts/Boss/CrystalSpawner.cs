@@ -6,14 +6,14 @@ using UnityEngine;
 public class CrystalSpawner : MonoBehaviour
 {
     private float SpawnTimer = 0;
-    private float SpawnTime = 10;
-    private int numberToSpawn = 3;
+    public float SpawnTime = 100;
     public GameObject CrystalPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         SpawnTimer = SpawnTime;
+        Instantiate(CrystalPrefab, transform.position, transform.rotation);
     }
 
     // Update is called once per frame
@@ -30,11 +30,7 @@ public class CrystalSpawner : MonoBehaviour
             
             if (SpawnTimer >= SpawnTime)
             {
-                for (int i = 0; i < numberToSpawn; i++)
-                {
-                    Vector3 randomSpawnPosition = new Vector3(Random.Range(-70f, 71f), 1.5f, Random.Range(-70f, 71f));
-                    Instantiate(CrystalPrefab, transform.position + randomSpawnPosition, Quaternion.identity);
-                }
+                Instantiate(CrystalPrefab, transform.position, transform.rotation);
             }
         }
     }

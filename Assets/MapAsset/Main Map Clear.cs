@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MainMapClear : MonoBehaviour
 {
-    static public bool[] isClear_m = new bool[8];
-    static public bool[] isLocked_m = new bool[8];
+    static public bool[] isClear_m = new bool[9];
+    static public bool[] isLocked_m = new bool[9];
 
     bool PrevIsClear(int n)
     {
@@ -65,13 +65,6 @@ public class MainMapClear : MonoBehaviour
             Debug.Log("Level [1] is loked");
         }
 
-        // Level[1] clear condition
-        if (!isClear_m[1] && isLocked_m[1] && z > 21f)
-        {
-            isClear_m[1] = true;
-            Debug.Log("Level [1] is clear");
-        }
-
         // Level[1] unlock
         if (isClear_m[1] && isLocked_m[1])
         {
@@ -89,12 +82,6 @@ public class MainMapClear : MonoBehaviour
             Debug.Log("Level [2] is loked");
         }
 
-        // Level[2] clear condition
-        if (!isClear_m[2] && isLocked_m[2] && x > 22f)
-        {
-            isClear_m[2] = true;
-            Debug.Log("Level [2] is clear");
-        }
 
         // Level[2] unlock
         if (isClear_m[2] && isLocked_m[2])
@@ -110,13 +97,6 @@ public class MainMapClear : MonoBehaviour
             Door("2out", 0, 0f, false);
             isLocked_m[3] = true;
             Debug.Log("Level [3] is loked");
-        }
-
-        // Level[3] clear condition
-        if (!isClear_m[3] && isLocked_m[3] && z > 45f)
-        {
-            isClear_m[3] = true;
-            Debug.Log("Level [3] is clear");
         }
 
         // Level[3] unlock
@@ -136,13 +116,6 @@ public class MainMapClear : MonoBehaviour
             Debug.Log("Level [4] is loked");
         }
 
-        // Level[4] clear condition
-        if (!isClear_m[4] && isLocked_m[4] && z < 20f)
-        {
-            isClear_m[4] = true;
-            Debug.Log("Level [4] is clear");
-        }
-
         // Level[4] unlock
         if (isClear_m[4] && isLocked_m[4])
         {
@@ -160,13 +133,6 @@ public class MainMapClear : MonoBehaviour
             Debug.Log("Level [5] is loked");
         }
 
-        // Level[5] clear condition
-        if (!isClear_m[5] && isLocked_m[5] && LeverControl.pulled[0] && true)
-        {
-            isClear_m[5] = true;
-            Debug.Log("Level [5] is clear");
-        }
-
         // Level[5] unlock
         if (isClear_m[5] && isLocked_m[5])
         {
@@ -181,13 +147,6 @@ public class MainMapClear : MonoBehaviour
             Door("6in", 1, 90f, false);
             isLocked_m[6] = true;
             Debug.Log("Level [6] is loked");
-        }
-
-        // Level[6] clear condition
-        if (!isClear_m[6] && isLocked_m[6] && LeverControl.pulled[1] && true)
-        {
-            isClear_m[6] = true;
-            Debug.Log("Level [6] is clear");
         }
 
         // Level[6] unlock
@@ -207,18 +166,24 @@ public class MainMapClear : MonoBehaviour
             Debug.Log("Level [7] is loked");
         }
 
-        // Level[7] clear condition
-        if (!isClear_m[7] && isLocked_m[7] && LeverControl.pulled[2] && true)
-        {
-            isClear_m[7] = true;
-            Debug.Log("Level [7] is clear");
-        }
-
         // Level[7] unlock
         if (isClear_m[7] && isLocked_m[7])
         {
             Door("7in", 0, 0f, true);
             isLocked_m[7] = false;
+        }
+
+        // Level[8] lock
+        if (PrevIsClear(8) && !isClear_m[8] && !isLocked_m[8] && x < -30f && y < -2f && z > 52f)
+        {
+            isLocked_m[8] = true;
+            Debug.Log("Level [8] is loked");
+        }
+
+        // Level[8] unlock
+        if (isClear_m[8] && isLocked_m[8])
+        {
+            isLocked_m[8] = false;
         }
     }
 }
