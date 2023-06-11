@@ -21,6 +21,7 @@ public class MainMapClear : MonoBehaviour
     {
         if (open)
         {
+            GameObject.Find("Player").GetComponent<Shooter>().playSoundEffect(7);
             if (num == 2)
             {
                 GameObject.Find(door + "L").transform.rotation = Quaternion.Euler(0f, angle + Random.Range(-75f, -50f), 0f);
@@ -34,6 +35,7 @@ public class MainMapClear : MonoBehaviour
         }
         else
         {
+            GameObject.Find("Player").GetComponent<Shooter>().playSoundEffect(6);
             if (num == 2)
             {
                 GameObject.Find(door + "L").transform.rotation = Quaternion.Euler(0f, angle, 0f);

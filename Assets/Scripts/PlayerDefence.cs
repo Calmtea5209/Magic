@@ -5,10 +5,11 @@ using System;
 
 public class PlayerDefence : MonoBehaviour
 {
-    public int Decrease = 10;
+    public float DecreasePercentage = 0.5f;
 
     private string[] Defence = {"PlayerDefenceLight","PlayerDefenceDark","PlayerDefenceDirt","PlayerDefenceWater","PlayerDefenceFlora"};
-    public int DecreaseDamage(string EnemyAttribute)
+    private float[] EnemyAttackDamage = {10f, 5f, 5f, 10f, 10f, 8f};
+    public float DecreaseDamage(string EnemyAttribute, float damage)
     {
         GameObject RestraintDefence = null;
         GameObject NormalDefence = null;
@@ -40,17 +41,17 @@ public class PlayerDefence : MonoBehaviour
 
         if(RestraintDefence != null)
         {
-            return Decrease;
+            return damage * DecreasePercentage;
         }
         foreach (var DefenceTag in Defence)
         {
             NormalDefence = GameObject.FindGameObjectWithTag(DefenceTag);
             if (NormalDefence != null)
             {
-                return Decrease / 5;
+                return damage * DecreasePercentage * 1.8f;
             }
         }
 
-        return 0;
+        return damage;
     }
 }

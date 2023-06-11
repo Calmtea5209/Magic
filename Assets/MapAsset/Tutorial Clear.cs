@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class TutorialClear : MonoBehaviour
 {
     static public bool[] isClear = new bool[7];
     static public bool[] isLocked = new bool[7];
     public float timer;
-
+    void Start()
+    {
+        Door("1in", 0f, true);
+        timer = 0.0f;
+    }
     bool PrevIsClear(int n)
     {
         bool b = true;
@@ -23,22 +28,18 @@ public class TutorialClear : MonoBehaviour
     {    
         if (open)
         {
-            GameObject.Find(door + "L").transform.rotation = Quaternion.Euler(0f, angle + Random.Range(-75f, -50f), 0f);
-            GameObject.Find(door + "R").transform.rotation = Quaternion.Euler(0f, angle + Random.Range(50f, 75f), 0f);
+            GameObject.Find(door + "L").transform.rotation = Quaternion.Euler(0f, angle + UnityEngine.Random.Range(-75f, -50f), 0f);
+            GameObject.Find(door + "R").transform.rotation = Quaternion.Euler(0f, angle + UnityEngine.Random.Range(50f, 75f), 0f);
+            GameObject.Find("Player").GetComponent<Shooter>().playSoundEffect(7);
         }
         else
         {
             GameObject.Find(door + "L").transform.rotation = Quaternion.Euler(0f, angle, 0f);
             GameObject.Find(door + "R").transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            GameObject.Find("Player").GetComponent<Shooter>().playSoundEffect(6);
         }
-    }
-    
-    void Start()
-    {
-        Door("1in", 0f, true);
-        timer = 0.0f;
-    }
 
+    }
     
     void Update()
     {
@@ -52,13 +53,6 @@ public class TutorialClear : MonoBehaviour
             isLocked[1] = true;
             Debug.Log("Level [1] is loked");
         }
-
-        // Room[1] clear condition
-        //if (!isClear[1] && isLocked[1] && true)
-        //{
-        //    isClear[1] = true;
-        //    Debug.Log("Room [1] is clear");
-        //}
 
         // Room[1] unlock
         if (isClear[1] && isLocked[1])
@@ -77,13 +71,6 @@ public class TutorialClear : MonoBehaviour
             Debug.Log("Room [2] is loked");
         }
 
-        // Room[2] clear condition
-        //if (!isClear[2] && isLocked[2] && z > 46f)
-        //{
-        //    isClear[2] = true;
-        //    Debug.Log("Room [2] is clear");
-        //}
-
         // Room[2] unlock
         if (isClear[2] && isLocked[2])
         {
@@ -101,13 +88,6 @@ public class TutorialClear : MonoBehaviour
             Debug.Log("Room [3] is loked");
         }
 
-        // Room[3] clear condition
-        //if (!isClear[3] && isLocked[3] && x > 40f)
-        //{
-        //    isClear[3] = true;
-        //    Debug.Log("Room [3] is clear");
-        //}
-
         // Room[3] unlock
         if (isClear[3] && isLocked[3])
         {
@@ -123,13 +103,6 @@ public class TutorialClear : MonoBehaviour
             Door("4in", 180f, false);
             isLocked[4] = true;
             Debug.Log("Room [4] is loked");
-        }
-
-        // Room[4] clear condition
-        if (!isClear[4] && isLocked[4] && z < 26f)
-        {
-            isClear[4] = true;
-            Debug.Log("Room [4] is clear");
         }
 
         // Room[4] unlock
@@ -149,13 +122,6 @@ public class TutorialClear : MonoBehaviour
             Debug.Log("Room [5] is loked");
         }
 
-        // Room[5] clear condition
-        if (!isClear[5] && isLocked[5] && x < 20f)
-        {
-            isClear[5] = true;
-            Debug.Log("Room [5] is clear");
-        }
-
         // Room[5] unlock
         if (isClear[5] && isLocked[5])
         {
@@ -173,13 +139,6 @@ public class TutorialClear : MonoBehaviour
             Debug.Log("Room [6] is loked");
         }
 
-        // Room[6] clear condition
-        if (!isClear[6] && isLocked[6] && z > 26f)
-        {
-            isClear[6] = true;
-            Debug.Log("Room [6] is clear");
-        }
-
         // Room[6] unlock
         if (isClear[6] && isLocked[6])
         {
@@ -191,7 +150,7 @@ public class TutorialClear : MonoBehaviour
         if (Vector3.Distance(PlayerMovement.PlayerPosision, new Vector3(20f, 1.11f, 38f)) <= 0.5)
         {
             timer += Time.deltaTime;
-            if (timer >= 3f)
+            if (timer >= 2f)
                 SceneManager.LoadScene(1);
         }
     }

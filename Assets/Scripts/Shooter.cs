@@ -75,7 +75,8 @@ public class Shooter : MonoBehaviour
         Destroy(projectileObj,6);
     }
 
-    void playSoundEffect(int id) 
+    
+    public void playSoundEffect(int id) 
     {
         Sound soundObj = Array.Find(sounds, sound => sound.id == id);       
 

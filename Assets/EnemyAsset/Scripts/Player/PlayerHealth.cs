@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
 
     private string[] EnemyAttack = {"EnemyAttackDark","EnemyAttackLight","EnemyAttackWater","EnemyAttackFire","EnemyAttackDirt","EnemyAttackFlora"};
+    private float[] EnemyAttackDamage = {10f, 5f, 5f, 10f, 10f, 8f};
+
     private string[] Attribute = {"Dark","Light","Water","Fire","Dirt","Flora"};
     void Start()
     {
@@ -28,11 +30,11 @@ public class PlayerHealth : MonoBehaviour
         }*/
     }
 
-    void TakeDamage(int damage, string attribute)
+    void TakeDamage(float damage, string attribute)
     {
         //currentHealth -= damage;
         //healthBar.SetHealth(currentHealth);
-        damage -= GameObject.Find("ControlDefence").GetComponent<PlayerDefence>().DecreaseDamage(attribute);
+        damage = GameObject.Find("ControlDefence").GetComponent<PlayerDefence>().DecreaseDamage(attribute,damage);
         HPbar.hp -= damage;
         if(HPbar.hp < 0)
         {
@@ -42,9 +44,10 @@ public class PlayerHealth : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (Array.IndexOf(EnemyAttack, other.gameObject.tag) != -1)
+        int idx = Array.IndexOf(EnemyAttack, other.gameObject.tag);
+        if (idx != -1)
         {
-            TakeDamage(20,Attribute[Array.IndexOf(EnemyAttack, other.gameObject.tag)]);
+            TakeDamage(EnemyAttackDamage[idx] ,Attribute[idx]);
         }
 
         /* if(other.gameObject.tag == "EnemyAttackMelee")

@@ -27,6 +27,7 @@ public class LeverControl : MonoBehaviour
         {
             if (pulled[0] && pulled[1] && pulled[2])
             {
+                GameObject.Find("Player").GetComponent<Shooter>().playSoundEffect(8);
                 gameObject.GetComponent<Animation>().Play();
                 pulled[number] = true;
             }
