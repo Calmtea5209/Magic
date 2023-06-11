@@ -134,7 +134,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[5] unlock
-        if (isClear_m[5] && isLocked_m[5])
+        if (isClear_m[5] && isLocked_m[5] && LeverControl.isPulled[0])
         {
             Door("5in", 1, 180f, true);
             Door("6in", 1, 90f, true);
@@ -150,7 +150,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[6] unlock
-        if (isClear_m[6] && isLocked_m[6])
+        if (isClear_m[6] && isLocked_m[6] && LeverControl.isPulled[1])
         {
             Door("6in", 1, 90f, true);
             Door("6out", 1, 90f, true);
@@ -167,7 +167,7 @@ public class MainMapClear : MonoBehaviour
         }
 
         // Level[7] unlock
-        if (isClear_m[7] && isLocked_m[7])
+        if (isClear_m[7] && isLocked_m[7] && LeverControl.isPulled[2])
         {
             Door("7in", 0, 0f, true);
             isLocked_m[7] = false;

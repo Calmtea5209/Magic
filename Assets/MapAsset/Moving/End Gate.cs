@@ -5,7 +5,6 @@ using UnityEngine;
 public class EndGate : MonoBehaviour
 {
     float timer = 0f;
-    bool isEnter = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +17,16 @@ public class EndGate : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (LeverControl.pulled[3]&& transform.position.y < -0.9 && timer >= 0.01)
+        if (LeverControl.isPulled[3]&& transform.position.y < -0.9 && timer >= 0.01)
         {
-            transform.Translate(0, 0.04f, 0);
+            transform.Translate(0, 0.012f, 0);
             timer = 0f;
         }
 
-        if (MainMapClear.isLocked_m[8] && LeverControl.pulled[3])
+        if (MainMapClear.isLocked_m[8] && LeverControl.isPulled[3])
         {
             transform.Translate(0, -4f, 0);
-            LeverControl.pulled[3] = false;
+            LeverControl.isPulled[3] = false;
             GameObject.Find("Player").GetComponent<Shooter>().playSoundEffect(9);
         }
     }
