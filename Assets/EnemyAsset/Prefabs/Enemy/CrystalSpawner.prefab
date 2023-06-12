@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnTime: 100
-  CrystalPrefab: {fileID: 2328614547645703230, guid: de35c2e466a7cda4d94c9f74b67aa5b9, type: 3}
+  CrystalPrefab: {fileID: 9165578779183162902, guid: 854faf6f549d7fc48a32fa2c7ffebce4, type: 3}

@@ -8,7 +8,7 @@ public class Boss : MonoBehaviour
 
     public Transform Player;
     private float range = 30f;
-    private float play_Rate = 1f;
+    private float play_Rate = 4f;
     private float timer = 0;
     private float BigFireBallTimer = 0;
     private float bigFireBall_Rate = 30;
