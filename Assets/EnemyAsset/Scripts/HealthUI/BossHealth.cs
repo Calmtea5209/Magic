@@ -11,6 +11,9 @@ public class BossHealth : MonoBehaviour
 
     public HealthBar healthBar;
 
+    static public bool BossIsDead = false;
+    static public Vector3 BossDeadPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,9 @@ public class BossHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            BossDeadPoint = gameObject.transform.position;
+            BossIsDead = true;
+
             Instantiate(BossDeath , transform.position, transform.rotation);
             Destroy(gameObject);
         }
@@ -48,32 +54,32 @@ public class BossHealth : MonoBehaviour
     {
         if (thereAreCrystals == false)
         {
-            if (other.gameObject.tag == "PlayerAttackDark")//¥´¤¤ª±®a
+            if (other.gameObject.tag == "PlayerAttackDark")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
             {
                 TakeDamage(20);
             }
 
-            if (other.gameObject.tag == "PlayerAttackWater")//¥´¤¤ª±®a
+            if (other.gameObject.tag == "PlayerAttackWater")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
             {
                 TakeDamage(40);
             }
 
-            if (other.gameObject.tag == "PlayerAttackLight")//¥´¤¤ª±®a
+            if (other.gameObject.tag == "PlayerAttackLight")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
             {
                 TakeDamage(20);
             }
 
-            if (other.gameObject.tag == "PlayerAttackFlora")//¥´¤¤ª±®a
+            if (other.gameObject.tag == "PlayerAttackFlora")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
             {
                 TakeDamage(5);
             }
 
-            if (other.gameObject.tag == "PlayerAttackFire")//¥´¤¤ª±®a
+            if (other.gameObject.tag == "PlayerAttackFire")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
             {
                 TakeDamage(1);
             }
 
-            if (other.gameObject.tag == "PlayerAttackDirt")//¥´¤¤ª±®a
+            if (other.gameObject.tag == "PlayerAttackDirt")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
             {
                 TakeDamage(25);
             }

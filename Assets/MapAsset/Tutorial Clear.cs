@@ -6,14 +6,19 @@ using System;
 
 public class TutorialClear : MonoBehaviour
 {
-    static public bool[] isClear = new bool[7];
-    static public bool[] isLocked = new bool[7];
+    static public bool[] isClear;
+    static public bool[] isLocked;
     public float timer;
+
     void Start()
     {
-        Door("1in", 0f, true);
+        isClear = new bool[7];
+        isLocked = new bool[7];
         timer = 0.0f;
+
+        Door("1in", 0f, true);
     }
+
     bool PrevIsClear(int n)
     {
         bool b = true;
@@ -149,8 +154,11 @@ public class TutorialClear : MonoBehaviour
 
         if (Vector3.Distance(PlayerMovement.PlayerPosision, new Vector3(20f, 1.11f, 38f)) <= 0.5)
         {
+            if (timer == 0f)
+                GameObject.Find("Player").GetComponent<Shooter>().playSoundEffect(10);
+
             timer += Time.deltaTime;
-            if (timer >= 2f)
+            if (timer >= 6f)
                 SceneManager.LoadScene(1);
         }
     }

@@ -2623,7 +2623,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83980562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9063,7 +9063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 272716621710632098, guid: 808e2f7136db900429587054224ceb88, type: 3}
       propertyPath: attack_Rate
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 272716621710632126, guid: 808e2f7136db900429587054224ceb88, type: 3}
       propertyPath: m_StoppingDistance
@@ -11776,7 +11776,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460596408}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -27008,23 +27008,107 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
       propertyPath: sounds.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
       propertyPath: sounds.Array.data[9].id
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[10].id
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
       propertyPath: sounds.Array.data[9].clip
       value: 
       objectReference: {fileID: 8300000, guid: 3cac6cd6c4aa045669895d4f443d8ccf, type: 3}
     - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 976058d61cbcb4835b00210ebec3fedd, type: 3}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[4].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[7].pitch
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[8].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
       propertyPath: sounds.Array.data[9].pitch
-      value: 1.57
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[10].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.39999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[4].volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[5].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[7].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[8].volume
+      value: 0.59999996
       objectReference: {fileID: 0}
     - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
       propertyPath: sounds.Array.data[9].volume
-      value: 0.66
+      value: 0.59999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714090471112713360, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
+      propertyPath: sounds.Array.data[10].volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8081188661772843215, guid: d863e0083b3b17644ad5ec0f62a1a35e, type: 3}
       propertyPath: m_Name
@@ -29753,7 +29837,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081573136}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32698,7 +32782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7537298191830315560, guid: 2bb8aee0f3ae57c45b1d30f46844de4f, type: 3}
       propertyPath: attack_Rate
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7537298191830315562, guid: 2bb8aee0f3ae57c45b1d30f46844de4f, type: 3}
       propertyPath: m_Speed
@@ -33566,7 +33650,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246357355}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44932,7 +45016,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698388563}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -53628,7 +53712,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002676186}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

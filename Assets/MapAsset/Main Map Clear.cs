@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class MainMapClear : MonoBehaviour
 {
-    static public bool[] isClear_m = new bool[9];
-    static public bool[] isLocked_m = new bool[9];
+    static public bool[] isClear_m;
+    static public bool[] isLocked_m;
+
+    void Start()
+    {
+        isClear_m = new bool[9];
+        isLocked_m = new bool[9];
+
+        Door("1in", 2, 0f, true);
+    }
 
     bool PrevIsClear(int n)
     {
@@ -44,11 +52,6 @@ public class MainMapClear : MonoBehaviour
             else
                 GameObject.Find(door).transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
-    }
-    
-    void Start()
-    {
-        Door("1in", 2, 0f, true);
     }
     
     void Update()
