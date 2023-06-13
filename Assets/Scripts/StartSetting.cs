@@ -7,15 +7,18 @@ public class StartSetting : MonoBehaviour
 
     public GameObject CurrentPlayer;
     public GameObject PreviousPlayer;
+
     private int start = 1;
 
     void Update()
-    {
-        PreviousPlayer = GameObject.Find("Player");
+    {   if(start == 1)
+        {
+            PreviousPlayer = GameObject.Find("Player");
+        }
         if(PreviousPlayer && start == 1)
         {
             Debug.Log("T");
-            PreviousPlayer.transform.position = new Vector3(0,1.1f,0);
+            Invoke("ChangePosition",1f);
             start = 0;
         }
         else if(start == 1)
@@ -23,5 +26,10 @@ public class StartSetting : MonoBehaviour
             CurrentPlayer.SetActive(true);
             start = 0;
         }
+    }
+
+    void ChangePosition()
+    {
+        PreviousPlayer.transform.position = new Vector3(0,1.1f,0);
     }
 }

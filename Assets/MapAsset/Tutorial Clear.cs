@@ -15,6 +15,11 @@ public class TutorialClear : MonoBehaviour
         isClear = new bool[7];
         isLocked = new bool[7];
         timer = 0.0f;
+        StartCoroutine(OpenDoorDelayed());
+    }
+    IEnumerator OpenDoorDelayed()
+    {
+        yield return new WaitForSeconds(1f);
 
         Door("1in", 0f, true);
     }
@@ -161,7 +166,12 @@ public class TutorialClear : MonoBehaviour
             if (timer >= 6f)
             {
                 HPbar.hp = 100;
+                GameObject tmp = GameObject.FindWithTag("Player");
+                tmp.SetActive(false);
+                tmp.transform.position = new Vector3(0f,1.11f,0f);
+                tmp.SetActive(true);
                 DontDestroyOnLoad(GameObject.Find("PlayerSetting"));
+                
                 SceneManager.LoadScene(2);
             }
         }

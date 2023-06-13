@@ -11,6 +11,8 @@ public class Predict : MonoBehaviour
     public static int result = 0;
     private Texture2D _inputTexture2D;
 
+    bool start = false;
+
     private void Start()
     {
         string modelPath = "Assets/tfliteModel/model_v6.tflite";
@@ -36,8 +38,9 @@ public class Predict : MonoBehaviour
 
     private void Update()
     {
-        if (LineGenerator.isDrawing && Input.GetKeyDown(KeyCode.V) && !ControlCanvas.SettingMenuStatus)
+        if (start && Input.GetKeyDown(KeyCode.V) && !ControlCanvas.SettingMenuStatus)
         {
+            start = false;
             var inputTexture = new RenderTexture(_inputTexture2D.width, _inputTexture2D.height, 0);
             inputCamera.targetTexture = inputTexture;
             inputCamera.Render();
@@ -73,6 +76,10 @@ public class Predict : MonoBehaviour
             }
             inputCamera.targetTexture = null;
             result = number;
+        }
+        else if(Input.GetKeyDown(KeyCode.V))
+        {
+            start = true;
         }
     }
 

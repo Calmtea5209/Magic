@@ -48,7 +48,6 @@ public class EnemySpawner : MonoBehaviour
             {
                 Destroy(enemyObject);
             }
-            spawnedEnemies.RemoveAt(i);
         }
     }
 }

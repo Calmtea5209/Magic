@@ -17,6 +17,8 @@ public class GameOver : MonoBehaviour
     {
         timer += Time.deltaTime;
         if (timer >= 3)
-            SceneManager.LoadScene(HPbar.nowScene);
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
