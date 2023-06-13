@@ -12,6 +12,12 @@ public class MainMapClear : MonoBehaviour
         isClear_m = new bool[9];
         isLocked_m = new bool[9];
 
+        StartCoroutine(OpenDoorDelayed());
+    }
+    IEnumerator OpenDoorDelayed()
+    {
+        yield return new WaitForSeconds(1f);
+
         Door("1in", 2, 0f, true);
     }
 

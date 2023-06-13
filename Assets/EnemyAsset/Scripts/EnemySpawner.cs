@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else if(!GameObject.Find("Boss") && status == 1){
             status = 2;
-            DestroyAllEnemies();
+            Invoke("DestroyAllEnemies",1f);
         }
     }
 

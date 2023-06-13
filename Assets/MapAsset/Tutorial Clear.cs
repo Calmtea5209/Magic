@@ -159,7 +159,11 @@ public class TutorialClear : MonoBehaviour
 
             timer += Time.deltaTime;
             if (timer >= 6f)
+            {
+                HPbar.hp = 100;
+                DontDestroyOnLoad(GameObject.Find("PlayerSetting"));
                 SceneManager.LoadScene(2);
+            }
         }
     }
 }
