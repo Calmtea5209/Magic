@@ -8,26 +8,47 @@ public class EnemySpawner : MonoBehaviour
 
     private float timer = 0;
     public float spawnRate = 60;
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
+
+    int status = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > spawnRate)
+        if (timer > spawnRate && status != 2)
         {
-            Instantiate(enemy[Random.Range(0,6)], transform.position, transform.rotation); 
+            GameObject newEnemy = Instantiate(enemy[Random.Range(0, 6)], transform.position, transform.rotation);
+            spawnedEnemies.Add(newEnemy);
             timer = 0;
         }
 
-        if(MainMapClear.isClear_m[8])
+        if (GameObject.Find("Boss") && status == 0)
         {
-            
+            status = 1;
+        }
+        else if(!GameObject.Find("Boss") && status == 1){
+            status = 2;
+            DestroyAllEnemies();
+        }
+    }
+
+    void DestroyAllEnemies()
+    {
+        for (int i=0;i<spawnedEnemies.Count;i++)
+        {
+            GameObject enemyObject = spawnedEnemies[i];
+            if (enemyObject != null)
+            {
+                Destroy(enemyObject);
+            }
+            spawnedEnemies.RemoveAt(i);
         }
     }
 }

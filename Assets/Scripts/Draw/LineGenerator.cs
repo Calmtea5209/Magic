@@ -16,6 +16,13 @@ public class LineGenerator : MonoBehaviour
     public static bool start = false;
     public static bool stop = false;
 
+    void Start() {
+        choose = 0;
+        isDrawing = false;
+        start = false;
+        stop = false;
+    }
+
     void Update()
     {
         if (!isDrawing && Input.GetKeyDown(KeyCode.V) && !ControlCanvas.SettingMenuStatus)

@@ -13,7 +13,7 @@ public class Predict : MonoBehaviour
 
     private void Start()
     {
-        string modelPath = "Assets/tfliteModel/model_v5.tflite";
+        string modelPath = "Assets/tfliteModel/model_v6.tflite";
         byte[] model = File.ReadAllBytes(modelPath);
 
         var options = new InterpreterOptions()

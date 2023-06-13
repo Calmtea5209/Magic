@@ -17,6 +17,9 @@ public class crosshairscolor : MonoBehaviour
     void Update()
     {
         int id = Predict.result;
-        gameObject.GetComponent<Image>().sprite = color[id];
+        if(id <= 5){
+
+            gameObject.GetComponent<Image>().sprite = color[id];
+        }
     }
 }

@@ -8,7 +8,7 @@ public class SettingMenu : MonoBehaviour
 {
 
     public GameObject MenuRoot;
-    public Slider VolumnSlider;
+    public Slider MouseSensitivity;
     public Toggle DrawMouseToggle;
     public Toggle DrawHandToggle;
     public ControlCanvas controlCanvas;
@@ -18,6 +18,8 @@ public class SettingMenu : MonoBehaviour
     {
         DrawMouseToggle.isOn = LineGenerator.choose == 0;
         DrawHandToggle.isOn = LineGenerator.choose == 1;
+        MouseSensitivity.value = MouseCamLook.mouseSensitivity;
+        MouseSensitivity.onValueChanged.AddListener(OnMouseSensitivityChanged);
         DrawMouseToggle.onValueChanged.AddListener(OnDrawMouseChanged);
         DrawHandToggle.onValueChanged.AddListener(OnDrawHandChanged);
     }
@@ -102,6 +104,12 @@ public class SettingMenu : MonoBehaviour
         }
         Debug.Log("Choose"+LineGenerator.choose);
     }
+    
+    public void OnMouseSensitivityChanged(float newValue)
+    {
+        MouseCamLook.mouseSensitivity = newValue;
+        Debug.Log(MouseCamLook.mouseSensitivity);
+    }
     public void OnShowControlButtonClicked(bool show)
     {
         ControlImage.SetActive(show);
@@ -110,6 +118,11 @@ public class SettingMenu : MonoBehaviour
     public void OnShowMagicButtonClicked(bool show)
     {
         MagicImage.SetActive(show);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 
 }

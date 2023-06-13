@@ -159,7 +159,7 @@ public class TutorialClear : MonoBehaviour
 
             timer += Time.deltaTime;
             if (timer >= 6f)
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
         }
     }
 }

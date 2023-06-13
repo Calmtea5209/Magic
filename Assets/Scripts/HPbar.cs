@@ -51,9 +51,9 @@ public class HPbar : MonoBehaviour
 
         if (hp <= 0 && !isDead)
         {
-            SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
-            isDead = true;
+            //SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+            //isDead = true;
         }
-
     }
+
 }
