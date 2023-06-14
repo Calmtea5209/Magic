@@ -1066,7 +1066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544fb994b587757419aad57fa3261472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 50
   playerBody: {fileID: 5366141325436810736}
 --- !u!1 &1370785351131784892
 GameObject:
@@ -1484,7 +1483,7 @@ MonoBehaviour:
   - {fileID: 6930772371129968132, guid: 526f4271bafc89f428def9d28c554be8, type: 3}
   currentProjectile: {fileID: 6930772371129968132, guid: 62ab7810c57b60a4e85fbf2e6e1478f4, type: 3}
   firePoint: {fileID: 2229545847434218053}
-  audioSource: {fileID: 7591423061723228274}
+  sounds: []
   mpBar: {fileID: 6736495545175536050}
   projectileSpeed: 30
   fireRate: 4
@@ -2313,12 +2312,12 @@ Transform:
   - {fileID: 4587978539463928704}
   - {fileID: 7923963477915648762}
   - {fileID: 5571213770425436180}
-  - {fileID: 7980602958839551697}
   - {fileID: 8151115139454326063}
   - {fileID: 4998530014883700232}
   - {fileID: 1018957384768076611}
+  - {fileID: 7980602958839551697}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3300248961379179797
 GameObject:
@@ -3248,6 +3247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0a15bc4cb3f4f45bdcc28d7da3acb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetCamera: {fileID: 0}
   filenamePrefix: Screenshot
   savePath: /Screenshots/
   screenshotKey: 116
@@ -7493,11 +7493,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuRoot: {fileID: 5722468607808976332}
-  VolumnSlider: {fileID: 7685421024397513930}
+  MouseSensitivity: {fileID: 0}
   DrawMouseToggle: {fileID: 7346761276476323719}
   DrawHandToggle: {fileID: 4052487851800506585}
   controlCanvas: {fileID: 6759206068676893488}
   ControlImage: {fileID: 1847789719908166842}
+  MagicImage: {fileID: 0}
 --- !u!1 &9076163044601214841
 GameObject:
   m_ObjectHideFlags: 0

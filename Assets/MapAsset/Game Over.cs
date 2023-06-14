@@ -13,12 +13,12 @@ public class GameOver : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer >= 3)
-        {
-            SceneManager.LoadScene(1);
-        }
-    }
+    // void Update()
+    // {
+    //     timer += Time.deltaTime;
+    //     if (timer >= 3)
+    //     {
+    //         SceneManager.LoadScene(1);
+    //     }
+    // }
 }
