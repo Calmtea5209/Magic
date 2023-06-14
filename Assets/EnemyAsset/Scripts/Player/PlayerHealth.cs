@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
 
     private string[] EnemyAttack = {"EnemyAttackDark","EnemyAttackLight","EnemyAttackWater","EnemyAttackFire","EnemyAttackDirt","EnemyAttackFlora"};
-    private float[] EnemyAttackDamage = {10f, 5f, 5f, 10f, 10f, 8f};
+    private float[] EnemyAttackDamage = {10f, 10f, 10f, 10f, 10f, 10f};
 
     private string[] Attribute = {"Dark","Light","Water","Fire","Dirt","Flora"};
     void Start()
@@ -43,6 +43,20 @@ public class PlayerHealth : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
+    {
+        int idx = Array.IndexOf(EnemyAttack, other.gameObject.tag);
+        if (idx != -1)
+        {
+            TakeDamage(EnemyAttackDamage[idx] ,Attribute[idx]);
+        }
+
+        /* if(other.gameObject.tag == "EnemyAttackMelee")
+        {
+            TakeDamage(30);
+        }*/
+    }
+
+    void OnCollisionEnter(Collision other)
     {
         int idx = Array.IndexOf(EnemyAttack, other.gameObject.tag);
         if (idx != -1)

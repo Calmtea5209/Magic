@@ -17,4 +17,7 @@ public class BossBigFireBall : MonoBehaviour
     {
         FireBall.SetDestination(Player.position);
     }
+
+
+    
 }

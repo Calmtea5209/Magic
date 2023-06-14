@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class LeverControl : MonoBehaviour
 {
-    static public bool[] isPulled = new bool[4];
+    static public bool[] isPulled;
     static public bool mouseOnLever = false;
     public int number = 0;
+    
+    void Start()
+    {
+        isPulled = new bool[4];
+    }
 
     void OnMouseEnter()
     {

@@ -37,32 +37,32 @@ public class EnemyHealthFlora : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerAttackDark")//�������a
         {
-            TakeDamage(20);
+            TakeDamage(15);
         }
 
         if (other.gameObject.tag == "PlayerAttackWater")//�������a
         {
-            TakeDamage(5);
+            TakeDamage(15);
         }
 
         if (other.gameObject.tag == "PlayerAttackLight")//�������a
         {
-            TakeDamage(5);
+            TakeDamage(15);
         }
 
         if (other.gameObject.tag == "PlayerAttackFlora")//�������a
         {
-            TakeDamage(10);
+            TakeDamage(15);
         }
 
         if (other.gameObject.tag == "PlayerAttackFire")//�������a
         {
-            TakeDamage(35);
+            TakeDamage(25);
         }
 
         if (other.gameObject.tag == "PlayerAttackDirt")//�������a
         {
-            TakeDamage(25);
+            TakeDamage(10);
         }
 
 

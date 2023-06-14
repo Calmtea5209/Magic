@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossFireBall : MonoBehaviour
 {
-    public GameObject specialEffect;//¯S®Ä
+    public GameObject specialEffect;//ï¿½Sï¿½ï¿½
     public float speed;
     public float timer = 0;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class BossFireBall : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")//¥´¤¤ª±®a
+        if (other.gameObject.tag == "Player")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
         {
             Instantiate(specialEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);

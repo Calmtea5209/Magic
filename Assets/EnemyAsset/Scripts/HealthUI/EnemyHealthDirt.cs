@@ -37,7 +37,7 @@ public class EnemyHealthDirt : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerAttackDark")//�������a
         {
-            TakeDamage(20);
+            TakeDamage(15);
         }
 
         if (other.gameObject.tag == "PlayerAttackWater")//�������a
@@ -47,7 +47,7 @@ public class EnemyHealthDirt : MonoBehaviour
 
         if (other.gameObject.tag == "PlayerAttackLight")//�������a
         {
-            TakeDamage(20);
+            TakeDamage(15);
         }
 
         if (other.gameObject.tag == "PlayerAttackFlora")//�������a
@@ -57,7 +57,7 @@ public class EnemyHealthDirt : MonoBehaviour
 
         if (other.gameObject.tag == "PlayerAttackFire")//�������a
         {
-            TakeDamage(10);
+            TakeDamage(15);
         }
 
         if (other.gameObject.tag == "PlayerAttackDirt")//�������a

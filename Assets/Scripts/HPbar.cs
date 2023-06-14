@@ -49,6 +49,9 @@ public class HPbar : MonoBehaviour
             hp += Time.deltaTime * 10;
         }
 
+        if (hp > MAX_HP)
+            hp = MAX_HP;
+
         if (hp <= 0 && !isDead)
         {
             nowScene = SceneManager.GetActiveScene().buildIndex;
