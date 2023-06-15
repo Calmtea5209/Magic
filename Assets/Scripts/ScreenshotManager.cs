@@ -7,6 +7,7 @@ public class ScreenshotManager : MonoBehaviour
     public string filenamePrefix = "Screenshot";
     public string savePath = "/Screenshots/";
     public KeyCode screenshotKey = KeyCode.T;
+    public KeyCode screenshotKey2 = KeyCode.G;
 
     void Update()
     {
@@ -33,6 +34,12 @@ public class ScreenshotManager : MonoBehaviour
             RenderTexture.Destroy(renderTexture);
 
             Debug.Log("Screenshot saved to " + filePath);
+        }
+        if (Input.GetKeyDown(screenshotKey2))
+        {
+            string filename = filenamePrefix + "_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+            string filePath = Application.dataPath + savePath + filename;
+            ScreenCapture.CaptureScreenshot(filePath);
         }
     }
 }
